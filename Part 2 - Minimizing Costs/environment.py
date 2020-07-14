@@ -119,7 +119,7 @@ class Environtment(object):
         self.initial_month = new_month
         self.current_number_users = self.initial_number_users
         self.current_rate_data = self.initial_rate_data
-        self.intrinsec_temperature = self.atmospheric_temperature + 1.25*self.current_number_users+1.25*self.current_rate_data
+        self.intrinsec_temperature = self.atmospheric_temperature + 1.25*self.current_number_users + 1.25*self.current_rate_data
         self.temperature_ai = self.intrinsec_temperature
         self.temperature_noai = (self.optimal_temperature[0]+self.optimal_temperature[1])/2.0
         self.total_energy_ai = 0.0

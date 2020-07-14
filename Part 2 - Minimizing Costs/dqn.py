@@ -25,7 +25,7 @@ class DQN(object):
         len_memory = len(self.memory)
         num_inputs = self.memory[0][0][0].shape[1]
         num_outputs = model.output_shape[-1]
-        inputs = np.zeros((min(batch_size, len_memory), num_inputs))        
+        inputs = np.zeros((min(batch_size, len_memory), num_inputs))
         targets = np.zeros((min(batch_size, len_memory), num_outputs))
         for i, idx in enumerate(np.random.randint(0, len_memory, size=min(len_memory, batch_size))):
             current_state, action, reward, next_state = self.memory[idx][0]
@@ -38,7 +38,3 @@ class DQN(object):
             else:
                 targets[i, action] = reward + self.discount_factor*Q_sa
         return inputs, targets
-            
-            
-            
-            
